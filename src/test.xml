@@ -1,0 +1,21 @@
+<hazard title="РђРІР°СЂРёСЏ" logic="AND">
+    <location x="302" y="149"/>
+    <component title="РљРѕРјРїРѕРЅРµРЅС‚ в„–3" brokenEventTitle="broken">
+        <location x="120" y="488"/>
+        <proposal>
+            <variant title="base" base="true" cost="1" crashProbability="23.0"/>
+        </proposal>
+    </component>
+    <component title="РљРѕРјРїРѕРЅРµРЅС‚ в„–1" brokenEventTitle="broken">
+        <location x="316" y="340"/>
+        <proposal>
+            <variant title="base" base="true" cost="4" crashProbability="3.0"/>
+        </proposal>
+    </component>
+    <component title="РљРѕРјРїРѕРЅРµРЅС‚ в„–2" brokenEventTitle="broken">
+        <location x="185" y="488"/>
+        <proposal>
+            <variant title="base" base="true" cost="2" crashProbability="1.0"/>
+        </proposal>
+    </component>
+</hazard>

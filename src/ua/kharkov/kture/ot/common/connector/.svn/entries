@@ -1,0 +1,56 @@
+10
+
+dir
+0
+http://svn.teamdev.org/stanislav.kurilin/GuiEditor/src/com/stuff/connector
+http://svn.teamdev.org/stanislav.kurilin
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6096db38-bf8d-4205-9df1-ea24bd3026d0
+
+WhenCommitDone.java
+file
+
+
+
+add
+
+ListenerWrapper.java
+file
+
+
+
+add
+
+FieldObserver.java
+file
+
+
+
+add
+
+WhenModelDispoced.java
+file
+
+
+
+add
+
