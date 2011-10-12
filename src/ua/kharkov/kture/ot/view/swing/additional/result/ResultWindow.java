@@ -97,7 +97,7 @@ public class ResultWindow extends AbstractAdditionalWindow {
     public void update() {
         DefaultTableModel topModel = getNewTopTableModel();
         topModel.addRow(new String[]{tartgetBundle.getMessage("label.probability"), risk});
-        topModel.addRow(new String[]{tartgetBundle.getMessage("label.cost"), cost});
+        topModel.addRow(new String[]{tartgetBundle.getMessage("label.systemCost"), cost});
         top.setModel(topModel);
         top.getColumnModel().getColumn(0).setMinWidth(200);
 
