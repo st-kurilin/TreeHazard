@@ -25,8 +25,9 @@ public class ComponentMenu extends AbstractPopupMenu {
         bind("Remove").toEvent(DeleteSelectedElement.class);
         bind("Decompose").submenu()
                 .bind(messageBundle.getMessage("And")).toEvent(new DecomposeComponent(Logic.AND))
-                .bind(messageBundle.getMessage("Or")).toEvent(new DecomposeComponent(Logic.OR))
-                .bind(messageBundle.getMessage("Not")).toEvent(new DecomposeComponent(Logic.NOT))
-                .bind(messageBundle.getMessage("MagicAnd")).toEvent(new DecomposeComponent(Logic.AND_WITH_ORDER));
+                .bind(messageBundle.getMessage("Or")).toEvent(new DecomposeComponent(Logic.OR));
+//                issue #6
+//                .bind(messageBundle.getMessage("Not")).toEvent(new DecomposeComponent(Logic.NOT))
+//                .bind(messageBundle.getMessage("MagicAnd")).toEvent(new DecomposeComponent(Logic.AND_WITH_ORDER));
     }
 }

@@ -25,15 +25,17 @@ public class HazardMenu extends AbstractPopupMenu {
         //TODO: [stas] reimplement localization mechanism
         bind("Type").submenu()
                 .bind(messageBundle.getMessage("And")).toEvent(new ChangeLogicEvent(Logic.AND))
-                .bind(messageBundle.getMessage("Or")).toEvent(new ChangeLogicEvent(Logic.OR))
-                .bind(messageBundle.getMessage("Not")).toEvent(new ChangeLogicEvent(Logic.NOT))
-                .bind(messageBundle.getMessage("MagicAnd")).toEvent(new ChangeLogicEvent(Logic.AND_WITH_ORDER));
+                .bind(messageBundle.getMessage("Or")).toEvent(new ChangeLogicEvent(Logic.OR));
+//                issue #6
+//                .bind(messageBundle.getMessage("Not")).toEvent(new ChangeLogicEvent(Logic.NOT))
+//                .bind(messageBundle.getMessage("MagicAnd")).toEvent(new ChangeLogicEvent(Logic.AND_WITH_ORDER));
         bind("AddComponent").toEvent(CreateNewComponentEvent.class);
         bind("AddHazard").submenu()
                 .bind(messageBundle.getMessage("And")).toEvent(new CreateNewHazard(Logic.AND))
-                .bind(messageBundle.getMessage("Or")).toEvent(new CreateNewHazard(Logic.OR))
-                .bind(messageBundle.getMessage("Not")).toEvent(new CreateNewHazard(Logic.NOT))
-                .bind(messageBundle.getMessage("MagicAnd")).toEvent(new ChangeLogicEvent(Logic.AND_WITH_ORDER));
+                .bind(messageBundle.getMessage("Or")).toEvent(new CreateNewHazard(Logic.OR));
+//                issue #6
+//                .bind(messageBundle.getMessage("Not")).toEvent(new CreateNewHazard(Logic.NOT))
+//                .bind(messageBundle.getMessage("MagicAnd")).toEvent(new ChangeLogicEvent(Logic.AND_WITH_ORDER));
         bind("Twins").toEvent(new ChangeTwinsEvent(2));
         bind("Remove").toEvent(DeleteSelectedElement.class);
     }
