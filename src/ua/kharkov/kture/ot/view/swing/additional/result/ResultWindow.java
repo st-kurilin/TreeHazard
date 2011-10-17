@@ -16,6 +16,7 @@ import javax.inject.Named;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
@@ -171,8 +172,9 @@ public class ResultWindow extends AbstractAdditionalWindow {
     }
 
     public void setRisk(String risk) {
-
-        this.risk = risk;
+        // issue #1, bloody hack
+        // TODO reimplement
+        this.risk = String.format("%.6f", Double.parseDouble(risk));
     }
 
     public String getCost() {
