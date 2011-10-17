@@ -1,38 +1,6 @@
 package ua.kharkov.kture.ot.view.swing.additional.optimization;
 
-import static com.google.common.collect.Lists.newArrayList;
-import static com.google.common.collect.Maps.newHashMap;
-
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-
-import javax.inject.Inject;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-
+import com.google.inject.name.Named;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
@@ -40,13 +8,10 @@ import org.jfree.chart.labels.XYToolTipGenerator;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.StackedXYBarRenderer;
 import org.jfree.data.xy.DefaultTableXYDataset;
-import org.jfree.data.xy.TableXYDataset;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.ui.RectangleEdge;
-import org.jfree.ui.RectangleInsets;
 import org.jfree.ui.VerticalAlignment;
-
 import sun.awt.VerticalBagLayout;
 import ua.kharkov.kture.ot.common.localization.MessageBundle;
 import ua.kharkov.kture.ot.common.math.ComparableNumber;
@@ -61,7 +26,21 @@ import ua.kharkov.kture.ot.view.declaration.viewers.Window;
 import ua.kharkov.kture.ot.view.swing.additional.AbstractAdditionalWindow;
 import ua.kharkov.kture.ot.view.swing.additional.componetedit.ProbabilityRenderer;
 
-import com.google.inject.name.Named;
+import javax.inject.Inject;
+import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.*;
+import java.util.List;
+
+import static com.google.common.collect.Lists.newArrayList;
+import static com.google.common.collect.Maps.newHashMap;
 
 /**
  * @author: Stanislav Kurilin
@@ -318,8 +297,16 @@ public class OptimizationWindow extends AbstractAdditionalWindow {
 
         NumberAxis domainAxis = new NumberAxis(xName);
         domainAxis.setPositiveArrowVisible(true);
-        domainAxis.setLowerBound(Math.min(dataset.getSeries(0).getMinX(), dataset.getSeries(1).getMinX()) - 0.5);
-        domainAxis.setUpperBound(Math.max(dataset.getSeries(0).getMaxX(), dataset.getSeries(1).getMaxX()) + 0.5);
+        if (Math.max(dataset.getSeries(0).getMaxX(), dataset.getSeries(1).getMaxX())
+                - Math.min(dataset.getSeries(0).getMinX(), dataset.getSeries(1).getMinX()) < 20) {
+            domainAxis.setLowerBound(((Math.max(dataset.getSeries(0).getMaxX(), dataset.getSeries(1).getMaxX())
+                    + Math.min(dataset.getSeries(0).getMinX(), dataset.getSeries(1).getMinX())) / 2) - 10);
+            domainAxis.setUpperBound(((Math.max(dataset.getSeries(0).getMaxX(), dataset.getSeries(1).getMaxX())
+                    + Math.min(dataset.getSeries(0).getMinX(), dataset.getSeries(1).getMinX())) / 2) + 10);
+        } else {
+            domainAxis.setLowerBound(Math.min(dataset.getSeries(0).getMinX(), dataset.getSeries(1).getMinX()) - 0.5);
+            domainAxis.setUpperBound(Math.max(dataset.getSeries(0).getMaxX(), dataset.getSeries(1).getMaxX()) + 0.5);
+        }
 //        domainAxis.setUpperMargin(0.2);
 
 
