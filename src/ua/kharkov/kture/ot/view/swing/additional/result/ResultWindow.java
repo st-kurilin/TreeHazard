@@ -174,7 +174,7 @@ public class ResultWindow extends AbstractAdditionalWindow {
     public void setRisk(String risk) {
         // issue #1, bloody hack
         // TODO reimplement
-        this.risk = String.format("%.6f", Double.parseDouble(risk));
+        this.risk = String.format("%.4e", Double.parseDouble(risk));
     }
 
     public String getCost() {

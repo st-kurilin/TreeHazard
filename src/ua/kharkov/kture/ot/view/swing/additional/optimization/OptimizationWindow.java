@@ -202,7 +202,7 @@ public class OptimizationWindow extends AbstractAdditionalWindow {
                 row.add(counter++);
                 for (Map.Entry<String, MinimizationOptimizationCriteria> tableColomn : coordinate.entrySet()) {
                     ComparableNumber foo = optimizerController.valueByCriteria(systemVariant, tableColomn.getValue());
-                    row.add(foo);
+                    row.add(String.format("%.8f", foo.doubleValue()));
                 }
                 row.add(getConfig(systemVariant));
                 rows.put(systemVariant, row);
