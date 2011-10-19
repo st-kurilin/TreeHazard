@@ -38,7 +38,7 @@ public class AboutWindow extends AbstractAdditionalWindow {
             names.remove(c);
         }
         b.append(bundle.getMessage("kurator")).append("\n");
-        b.append("    ").append(bundle.getMessage("mamontov"));
+        b.append("    ").append(bundle.getMessage("management"));
         b.append("\n\n\n\n\n\n\n\n\n\n\n\nWe are realy sorry :(");
 
         JTextArea text = new JTextArea(b.toString());

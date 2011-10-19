@@ -60,8 +60,8 @@ public class OptimizationModule extends AbstractWindowModule {
     @Named("criteria")
     Map<String, MinimizationOptimizationCriteria> providesCriteria(@Named("optimization") MessageBundle bundle, OptimizerCriterionKeeper defaultCriterion) {
         return ImmutableMap.<String, MinimizationOptimizationCriteria>builder()
-                .put(bundle.getMessage("cost"), Criteria.COST)
-                .put(bundle.getMessage("crashProbability"), Criteria.CRASH_PROBABILITY)
+                .put(bundle.getMessage("minCost"), Criteria.COST)
+                .put(bundle.getMessage("minCrashProbability"), Criteria.CRASH_PROBABILITY)
                 .put(bundle.getMessage("costDivProb"), Criteria.COST_DIVIDED_BY_PROBABILITY_KOEF)
                 .put(bundle.getMessage("costMultProb"), Criteria.COST_MULTI_PROBABILITY)
                 .build();
