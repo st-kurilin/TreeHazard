@@ -28,7 +28,7 @@ public class AboutWindow extends AbstractAdditionalWindow {
                 bundle.getMessage("st.kurilin"),
                 bundle.getMessage("akril"));
         setTitle("About");
-        setSize(500, 150);
+        setSize(500, 170);
         setResizable(false);
         StringBuffer b = new StringBuffer();
         b.append(bundle.getMessage("developers")).append("\n");
@@ -39,7 +39,7 @@ public class AboutWindow extends AbstractAdditionalWindow {
         }
         b.append(bundle.getMessage("kurator")).append("\n");
         b.append("    ").append(bundle.getMessage("management"));
-        b.append("\n\n\n\n\n\n\n\n\n\n\n\nWe are realy sorry :(");
+        b.append("\n\n\n\n\n\n\n\n\n\n\n\nWe are really sorry :(");
 
         JTextArea text = new JTextArea(b.toString());
         text.setEditable(false);

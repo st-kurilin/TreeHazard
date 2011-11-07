@@ -217,7 +217,7 @@ public class OptimizationWindow extends AbstractAdditionalWindow {
         private String getConfig(SystemDescriber systemVariant) {
             StringBuffer buf = new StringBuffer();
             for (Map.Entry<String, String> variant : systemVariant.configuration().entrySet()) {
-                buf.append(variant.getKey()).append("=>").append(variant.getValue()).append(", \n\r");
+                buf.append(variant.getValue()).append(", \n\r");
             }
             return buf.toString();
         }
